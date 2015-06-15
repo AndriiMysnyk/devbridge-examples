@@ -128,6 +128,18 @@ input[type="text"] {
     overflow: hidden;
 }
 
+.demo-btn-minus {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+    vertical-align: middle;
+    background: url('images/sprite-base-2.png') no-repeat -60px -175px;
+    text-indent: 9999px;
+    overflow: hidden;
+}
+
     .demo-btn-search:hover {
         background-color: #383838;
     }

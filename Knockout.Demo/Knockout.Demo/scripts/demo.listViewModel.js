@@ -40,6 +40,14 @@ function ListViewModel() {
     };
 
     /**
+    * Deletes selected item
+    */
+    self.deleteSelected = function () {
+        self.allItems.remove(function (listItem) { return listItem.isChecked() });
+        setItems();
+    };
+
+    /**
     * Searches a folder for given search query
     */
     self.searchItems = function () {
@@ -134,6 +142,19 @@ function ListViewModel() {
     */
     self.isRootFolder = ko.computed(function () {
         return !self.folderId();
+    });
+
+    /**
+    * Computed KnockOut function, returns true, if any item is checked
+    */
+    self.isAnyChecked = ko.computed(function () {
+        for (i = 0; i < self.items().length; i++) {
+            if (self.items()[i].isChecked()) {
+                return true;
+            }
+        }
+
+        return false;
     });
 
     /**

@@ -41,6 +41,7 @@
 					<div data-bind="foreach: items">
 						<div data-bind="css: rowClassNames()">
 							<div class="demo-media-items-block">
+                                                                <input type="checkbox" data-bind="checked: isChecked">
 								<div data-bind="css: iconClassNames(), click: openItem"></div>
 								<div class="demo-media-name" data-bind="text: title(), click: openItem"></div>
 							</div>
@@ -60,7 +61,14 @@
 			        <!-- knockout template example: we can reuse same template as many times as we want
 			        <div class="demo-media-sorting-block" data-bind="template: {name: 'header-template'}"></div>
                     -->
-
+				<!-- ko if: isAnyChecked() -->
+			        <div class="demo-add-folder">
+					<div class="demo-media-items-block" data-bind="click: deleteSelected">
+						<div class="demo-btn-minus"></div>
+						<div class="demo-media-name">Delete selected</div>
+					</div>
+				</div>
+				<!-- /ko -->
 			        <div class="demo-add-folder">
 						<div class="demo-media-items-block" data-bind="click: addNewFolder">
 							<div class="demo-system-addfolder"></div>

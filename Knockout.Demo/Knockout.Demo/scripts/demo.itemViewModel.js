@@ -8,6 +8,7 @@ function ItemViewModel(parent, isFolder, id, title, folderId) {
     self.id = ko.observable();
     self.extension = ko.observable();
     self.isActive = ko.observable(false);
+    self.isChecked = ko.observable(false);
 
     // Create title with required extension
     self.title = ko.observable().extend({ required: true });
